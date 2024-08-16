@@ -10,6 +10,7 @@ import {
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/outline";
+import Categories from "@/components/Categories";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -25,7 +26,7 @@ const HomeScreen = () => {
         <Image
           //   source={require("../assets/images/favicon.png")}
           source={{ uri: "https://links.papareact.com/wru" }}
-          className="h-7 w-7 bg-gray-300 p-4 rounded-full px-4"
+          className="h-7 w-7 bg-gray-300 p-4 rounded-full "
         />
 
         <View className="flex-1">
@@ -49,7 +50,14 @@ const HomeScreen = () => {
         <Icons.AdjustmentsHorizontalIcon size={35} color="#00CCBB" />
       </View>
 
-      <ScrollView></ScrollView>
+      <ScrollView
+        className="bg-gray-100 flex-1"
+        contentContainerStyle={{
+          paddingBottom: 100,
+        }}
+      >
+        <Categories />
+      </ScrollView>
     </SafeAreaView>
   );
 };

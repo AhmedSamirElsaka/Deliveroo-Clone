@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 const Categories = () => {
   return (
-    <View>
+    <ScrollView>
       <Text>Categories</Text>
-    </View>
+    </ScrollView>
   );
 };
 

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import * as Icons from "react-native-heroicons/outline";
 
@@ -17,8 +17,14 @@ const FeaturedRow = ({
         <Text className="text-lg font-bold">{title}</Text>
         <Icons.ArrowRightIcon size={20} color="#00CCBB" />
       </View>
-
       <Text className="text-xs text-gray-500 px-4">{description}</Text>
+
+      <ScrollView
+        horizontal
+        contentContainerStyle={{ paddingHorizontal: 15 }}
+        showsHorizontalScrollIndicator={false}
+        className="pt-4"
+      ></ScrollView>
     </View>
   );
 };

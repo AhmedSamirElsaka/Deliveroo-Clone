@@ -11,6 +11,7 @@ import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/outline";
 import Categories from "@/components/Categories";
+import FeaturedRow from "@/components/FeaturedRow";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -59,9 +60,24 @@ const HomeScreen = () => {
         <Categories />
 
         <FeaturedRow
+          id="1"
           title="Featured"
           description="Paid placements from our partners"
-          featuredCategory="Featured"
+        />
+        <FeaturedRow
+          id="2"
+          title="Featured"
+          description="Paid placements from our partners"
+        />
+        <FeaturedRow
+          id="3"
+          title="Featured"
+          description="Paid placements from our partners"
+        />
+        <FeaturedRow
+          id="4"
+          title="Featured"
+          description="Paid placements from our partners"
         />
       </ScrollView>
     </SafeAreaView>

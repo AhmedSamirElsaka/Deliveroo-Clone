@@ -25,3 +25,9 @@ const CategoryCard = ({
 export default CategoryCard;
 
 const styles = StyleSheet.create({});
+
+export interface Category {
+  _id: string;
+  image: any; // Replace with the actual type of the image property
+  name: string;
+}

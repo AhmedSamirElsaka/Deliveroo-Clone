@@ -16,5 +16,11 @@ export default defineType({
       title: 'Restaurants',
       of: [{type: 'reference', to: [{type: 'restaurant'}]}],
     },
+
+    {
+      name: 'short_description',
+      type: 'text',
+      title: 'Description',
+    },
   ],
 })

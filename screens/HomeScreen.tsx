@@ -7,19 +7,37 @@ import {
   TextInput,
   View,
 } from "react-native";
-import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import * as Icons from "react-native-heroicons/outline";
 import Categories from "@/components/Categories";
 import FeaturedRow from "@/components/FeaturedRow";
-
+import React, { useState, useEffect, useLayoutEffect } from "react";
+import client from "@/sanity";
 const HomeScreen = () => {
   const navigation = useNavigation();
+  const [FeaturedCategories, setFeaturedCategories] = useState();
 
   useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
     });
+  }, []);
+
+  useEffect(() => {
+    client
+      .fetch(
+        `
+    *[_type == "featured"]{
+      ...,
+      restaurants[]->{
+        ...,
+        dishes[]->,
+      },
+    }`
+      )
+      .then((data) => {
+        setFeaturedCategories(data);
+      });
   }, []);
   return (
     <SafeAreaView className="bg-white pt-5 flex-1">

@@ -18,5 +18,13 @@ export const { addToBasket, removeFromBasket } = basketSlice.actions;
 
 export default basketSlice.reducer;
 export const selectBasketItems = (state: any) => state.basket.items;
+export const selectBasketItemsWithId = (state: any, id: string) =>
+  state.basket.items.filter((item: Item) => item.id === id);
 
-interface Item {}
+interface Item {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+}

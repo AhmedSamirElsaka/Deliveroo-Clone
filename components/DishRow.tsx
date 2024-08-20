@@ -37,7 +37,6 @@ const DishRow = ({
     dispatch(removeFromBasket({ id }));
   };
 
-  console.log(itemsSelector);
   return (
     <>
       <TouchableOpacity

@@ -1,8 +1,16 @@
 import { SafeAreaView, StatusBar, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import * as Animatable from "react-native-animatable";
 import * as Progress from "react-native-progress";
+import { useNavigation } from "expo-router";
 const PreparingOrderScreen = () => {
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate("DeliveryScreen" as never);
+    }, 4000);
+  });
   return (
     <SafeAreaView className="flex-1 bg-[#00CCBB] justify-center items-center">
       <StatusBar hidden={true} />

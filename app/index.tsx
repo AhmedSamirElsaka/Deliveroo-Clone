@@ -20,6 +20,10 @@ export default function Index() {
             component={BasketScreen}
             options={{ headerShown: false, presentation: "modal" }}
           />
+          <Stack.Screen
+            name="PreparingOrderScreen"
+            component={PreparingOrderScreen}
+          />
         </Stack.Navigator>
       </Provider>
     </NavigationContainer>

@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React, { useLayoutEffect } from "react";
 import {
   ParamListBase,
@@ -6,7 +13,8 @@ import {
   useNavigation,
   useRoute,
 } from "@react-navigation/native";
-
+import { urlFor } from "@/sanity";
+import * as Icons from "react-native-heroicons/solid";
 const RestaurantScreen = () => {
   const navigation = useNavigation();
 
@@ -43,25 +51,23 @@ const RestaurantScreen = () => {
     });
   }, []);
   return (
-    <View>
-      <Text>{title}</Text>
-    </View>
+    <ScrollView>
+      <View className="relative">
+        <Image
+          source={{ uri: urlFor(imgUrl).url() }}
+          className="w-full h-56 bg-gray-300 p-4"
+        />
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          className="absolute top-8 left-5 p-2 bg-gray-100 rounded-full"
+        >
+          <Icons.ArrowLeftIcon size={20} color="#00CCBB" />
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 };
 
 export default RestaurantScreen;
 
 const styles = StyleSheet.create({});
-
-interface RouteParams extends RouteProp<ParamListBase> {
-  id: string;
-  imgUrl: string;
-  title: string;
-  rating: number;
-  genre: string;
-  address: string;
-  short_description: string;
-  dishes: any[];
-  long: number;
-  lat: number;
-}

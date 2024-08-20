@@ -19,14 +19,14 @@ const Categories = () => {
       {categories?.map((category) => (
         <CategoryCard
           key={category._id}
-          imageUrl={urlFor(category.image).url().toString()}
+          imageUrl={urlFor(category.image).width(200).url().toString()}
           title={category.name}
         />
       ))}
       {categories?.map((category) => (
         <CategoryCard
           key={category._id}
-          imageUrl={urlFor(category.image).url().toString()}
+          imageUrl={urlFor(category.image).width(200).url().toString()}
           title={category.name}
         />
       ))}

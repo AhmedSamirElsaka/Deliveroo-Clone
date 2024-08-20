@@ -34,6 +34,12 @@ export const selectBasketItems = (state: any) => state.basket.items;
 export const selectBasketItemsWithId = (state: any, id: string) =>
   state.basket.items.filter((item: Item) => item.id === id);
 
+export const selectBasketTotal = (state: any) =>
+  state.basket.items.reduce(
+    (total: number, item: Item) => total + item.price,
+    0
+  );
+
 interface Item {
   id: string;
   name: string;

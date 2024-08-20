@@ -16,6 +16,7 @@ import {
 } from "@react-navigation/native";
 import { urlFor } from "@/sanity";
 import * as Icons from "react-native-heroicons/solid";
+import DishRow from "@/components/DishRow";
 const RestaurantScreen = () => {
   const navigation = useNavigation();
 

@@ -12,6 +12,8 @@ export const restaurantSlice = createSlice({
       address: null,
       short_description: null,
       dishes: null,
+      long: null,
+      lat: null,
     },
   },
   reducers: {
